@@ -1,0 +1,103 @@
+{
+  "track": "nlp",
+  "model": "DeepPavlov/rubert-base-cased",
+  "revision": "4036cab694767a299f2b9e6492909664d9414229",
+  "dataset": "RCC-MSU/collection3",
+  "classes": [
+    "LOC",
+    "ORG",
+    "PER"
+  ],
+  "n_train": 9301,
+  "n_val": 2153,
+  "n_test": 1922,
+  "params_total": 177268231,
+  "baseline": {
+    "majority": {
+      "f1_micro": 0.561480399318237,
+      "f1_macro": 0.5786909792940792,
+      "precision": 0.5628508664876739,
+      "recall": 0.5601165897498178
+    },
+    "random_head": {
+      "f1_micro": 0.02498611882287618,
+      "f1_macro": 0.022442039612754844,
+      "precision": 0.01431044839404968,
+      "recall": 0.09837260140879281
+    }
+  },
+  "final": {
+    "f1_micro": 0.9721739130434783,
+    "f1_macro": 0.9703810789296144,
+    "precision": 0.9664114596196591,
+    "recall": 0.9780054986253437,
+    "token_f1": 0.9801715265866209,
+    "per_type": {
+      "LOC": {
+        "precision": 0.972338642078793,
+        "recall": 0.9872340425531915,
+        "f1-score": 0.9797297297297297,
+        "support": 1175
+      },
+      "ORG": {
+        "precision": 0.9251170046801872,
+        "recall": 0.9442675159235668,
+        "f1-score": 0.9345941686367218,
+        "support": 1256
+      },
+      "PER": {
+        "precision": 0.9955527318932655,
+        "recall": 0.9980891719745223,
+        "f1-score": 0.9968193384223918,
+        "support": 1570
+      }
+    }
+  },
+  "ablation": {
+    "setting": "all_subwords",
+    "first_subword": {
+      "validation": {
+        "f1_micro": 0.974749305303854,
+        "f1_macro": 0.9733642395400531,
+        "precision": 0.9697115384615385,
+        "recall": 0.9798396890940004
+      },
+      "test": {
+        "f1_micro": 0.9721739130434783,
+        "f1_macro": 0.9703810789296144,
+        "precision": 0.9664114596196591,
+        "recall": 0.9780054986253437
+      },
+      "train_time_sec": 1277.4623153329994,
+      "labeled_subwords": 187287,
+      "final_eval_loss": 0.019405564293265343
+    },
+    "all_subwords": {
+      "validation": {
+        "f1_micro": 0.9749457961936883,
+        "f1_macro": 0.973611707385191,
+        "precision": 0.9670250896057347,
+        "recall": 0.9829973281515667
+      },
+      "test": {
+        "f1_micro": 0.9720531610980002,
+        "f1_macro": 0.9702553229624252,
+        "precision": 0.9661728395061728,
+        "recall": 0.9780054986253437
+      },
+      "train_time_sec": 1456.381516207999,
+      "labeled_subwords": 203699,
+      "final_eval_loss": 0.021155595779418945
+    }
+  },
+  "errors": {
+    "correct": 4034,
+    "boundary": 68,
+    "type": 8,
+    "missed": 7,
+    "spurious": 53
+  },
+  "device": "mps",
+  "train_time_sec": 1277.4623153329994,
+  "fast_mode": false
+}
