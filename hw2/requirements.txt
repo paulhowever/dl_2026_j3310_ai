@@ -8,3 +8,7 @@ accelerate==1.15.0
 seqeval==1.2.2
 numpy
 matplotlib
+# Только для бонуса 6.4 (экспорт в ONNX), проверено на Apple M5 с Python 3.13 и torch 2.11
+onnx==1.23.2
+onnxruntime==1.31.1
+onnxscript==0.7.2
